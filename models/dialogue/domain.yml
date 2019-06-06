@@ -1,0 +1,89 @@
+%YAML 1.1
+---
+actions:
+- utter_greet
+- utter_goodbye
+- utter_ask_movie_genre
+- action_movie_by_genre
+- action_movie_by_actors
+- action_movie_details
+config:
+  store_entities_as_slots: true
+entities:
+- genre
+- actors
+- realisator
+- release_date
+- duration
+- ratings
+- plot
+- link_trailer
+- languages
+- similar_movies
+- movie_name
+forms: []
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- movie_search:
+    use_entities: true
+- inform_movie_genre:
+    use_entities: true
+- inform_movie_actors:
+    use_entities: true
+- inform_movie_name:
+    use_entities: true
+slots:
+  actors:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  genre:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  languages:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  link_trailer:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  movie_name:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  plot:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  ratings:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  realisator:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  similar_movies:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_ask_movie_actors:
+  - text: What actors do you like ?
+  - text: Tell me a movie actor you like !
+  utter_ask_movie_genre:
+  - text: What genre of movie do you like ?
+  - text: What kind of movie do you want to see ?
+  - text: What is your favourite movie genre ?
+  utter_goodbye:
+  - text: Bye !
+  - text: See you soon !
+  - text: Goodbye, have a good movie night !
+  utter_greet:
+  - text: Hello ! My name is Movie Chatbot. How can I help you ?
+  - text: Hi ! My name is Movie Chatbot. You can ask me questions about movies

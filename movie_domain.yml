@@ -1,0 +1,65 @@
+slots:
+    genre:
+        type: text
+    actors:
+        type: text
+    realisator:
+        type: text
+    ratings:
+        type: text
+    plot :
+        type: text
+    link_trailer:
+        type: text
+    languages:
+        type: text
+    similar_movies:
+        type: text
+    movie_name:
+        type: text
+
+intents:
+    - greet
+    - goodbye
+    - movie_search
+    - inform_movie_genre
+    - inform_movie_actors
+    - inform_movie_name
+
+entities:
+    - genre
+    - actors
+    - realisator
+    - release_date
+    - duration
+    - ratings
+    - plot
+    - link_trailer
+    - languages
+    - similar_movies
+    - movie_name
+
+templates:
+    utter_greet:
+        - "Hello ! My name is Movie Chatbot. How can I help you ?"
+        - "Hi ! My name is Movie Chatbot. You can ask me questions about movies"
+    utter_goodbye:
+        - "Bye !"
+        - "See you soon !"
+        - "Goodbye, have a good movie night !"
+    utter_ask_movie_genre:
+        - "What genre of movie do you like ?"
+        - "What kind of movie do you want to see ?"
+        - "What is your favourite movie genre ?"
+    utter_ask_movie_actors:
+        - "What actors do you like ?"
+        - "Tell me a movie actor you like !"
+
+
+actions:
+    - utter_greet
+    - utter_goodbye
+    - utter_ask_movie_genre
+    - action_movie_by_genre
+    - action_movie_by_actors
+    - action_movie_details
